@@ -3,9 +3,15 @@
     <div class="logo_cont">
       <img class="logo" src="../icons/logo.png" alt="" />
       <div class="icons_cont">
-        <img class="icons" src="../icons/facebook.png" alt="" />
-        <img class="icons" src="../icons/twitter.png" alt="" />
-        <img class="icons" src="../icons/instagram.png" alt="" />
+        <a href="#">
+          <img class="icons" src="../icons/facebook.png" alt="" />
+        </a>
+        <a href="#">
+          <img class="icons" src="../icons/twitter.png" alt="" />
+        </a>
+        <a href="#">
+          <img class="icons" src="../icons/instagram.png" alt="" />
+        </a>
       </div>
     </div>
   </header>
