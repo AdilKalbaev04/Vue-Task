@@ -1,45 +1,45 @@
 <template>
   <div>
-    <textarea
+    <!-- <textarea
       v-model="value"
       class="input"
       :placeholder="placeholder"
-      v-if="type === 'textarea'"
-    ></textarea>
+      type ='textarea'
+      :name="name"
+    ></textarea> -->
     <input
-      v-else
-      v-model="value"
-      class="input"
-      :placeholder="placeholder"
       :type="type"
+      class="input"
+      @input="onInput"
+      :value="modelValue"
+      :placeholder="placeholder"
     />
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref, watch } from 'vue'
+import { defineEmits, defineProps } from 'vue'
+const emit = defineEmits(['update:modelValue'])
 
+// eslint-disable-next-line no-unused-vars
 const props = defineProps({
-  modelValue: String,
-  placeholder: String,
   type: {
-    validator(value) {
-      const types = ['email', 'search', 'password', 'textarea']
-      if (types.includes(value)) {
-        return value
-      }
-      return 'text'
-    },
+    type: String,
     default: 'text'
+  },
+  modelValue: {
+    type: String,
+    default: ''
+  },
+  placeholder: {
+    type: String,
+    default: ''
   }
 })
 
-const emits = defineEmits(['updata:modelValue'])
-const value = ref(props.modelValue)
-
-watch(value, () => {
-  emits('updata:modelValue', value)
-})
+const onInput = (event) => {
+  emit('update:modelValue', event.target.value)
+}
 </script>
 
 <style scoped>

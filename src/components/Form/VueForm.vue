@@ -15,16 +15,31 @@
             Australia</span
           >
           <div class="icons_cont">
-            <i class="icon-facebook1"></i>
-            <i class="icon-twitter"></i>
-            <i class="icon-instagramV2"></i>
-            <i class="icon-youtube"></i>
+            <a href="#" class="icon-facebook1"></a>
+            <a href="#" class="icon-twitter"></a>
+            <a href="#" class="icon-instagramV2"></a>
+            <a href="#" class="icon-youtube"></a>
           </div>
         </div>
-        <form class="block_2">
-          <VInput placeholder="Enter your Name" type="text" />
-          <VInput placeholder="Enter a valid email address" type="email" />
-          <VInput placeholder="Enter your messege" type="textarea" />
+        <form @submit.prevent="submitForm" class="block_2">
+          <VInput
+            name="name"
+            v-model="name"
+            placeholder="Enter your Name"
+            type="text"
+          />
+          <VInput
+            name="email"
+            v-model="email"
+            placeholder="Enter a valid email address"
+            type="email"
+          />
+          <VInput
+            name="desc"
+            v-model="desc"
+            placeholder="Enter your messege"
+            type="textarea"
+          />
           <VButton class="block_2_btn">SUBMIT</VButton>
         </form>
       </div>
@@ -32,7 +47,19 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+import { sendData } from '../../api/request'
+import { ref } from 'vue'
+const name = ref('')
+const email = ref('')
+const desc = ref('')
+
+const submitForm = (event) => {
+  event.preventDefault()
+  const data = { name: name.value, email: email.value, desc: desc.value }
+  sendData(data)
+}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Open+Sans&display=swap');
@@ -50,7 +77,6 @@
 
 [class^='icon-'],
 [class*=' icon-'] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -62,7 +88,6 @@
   text-transform: none;
   line-height: 1;
 
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
