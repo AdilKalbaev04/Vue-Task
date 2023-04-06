@@ -1,12 +1,5 @@
 <template>
   <div>
-    <!-- <textarea
-      v-model="value"
-      class="input"
-      :placeholder="placeholder"
-      type ='textarea'
-      :name="name"
-    ></textarea> -->
     <input
       :type="type"
       class="input"

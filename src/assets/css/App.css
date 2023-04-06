@@ -9,3 +9,6 @@ body {
   max-width: 1506px;
   margin: 0 auto;
 }
+a {
+  color: #111111;
+}

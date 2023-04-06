@@ -132,6 +132,7 @@
 }
 .title {
   font-size: 4rem;
+  color: rgb(255, 255, 255);
 }
 .text {
   font-family: 'Bai Jamjuree', sans-serif;
@@ -139,6 +140,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
+  color: rgb(255, 255, 255);
 }
 .text2 {
   max-width: 43%;
@@ -147,18 +149,21 @@
   justify-content: center;
   gap: 35px;
   padding: 30px;
+  color: rgb(255, 255, 255);
 }
 .text_3 {
   font-weight: bold;
   font-size: 1.25rem;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.7;
+  color: rgb(255, 255, 255);
 }
 .text2_desc {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.25rem;
   line-height: 1.7;
   font-weight: 300;
+  color: rgb(255, 255, 255);
 }
 .icons_cont {
   position: absolute;
