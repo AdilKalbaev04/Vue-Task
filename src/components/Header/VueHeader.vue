@@ -1,7 +1,7 @@
 <template>
-  <header class="container">
+  <header class="Cont_Header">
     <div class="logo_cont">
-      <img class="logo" src="../icons/logo.png" alt="" />
+      <a href="#"> <img class="logo" src="../icons/logo.png" alt="" /></a>
       <div class="icons_cont">
         <a href="#">
           <img class="icons" src="../icons/facebook.png" alt="" />
@@ -27,7 +27,7 @@
 </script>
 
 <style scoped>
-.container {
+.Cont_Header {
   max-width: 1506px;
   margin: 0 auto;
 }

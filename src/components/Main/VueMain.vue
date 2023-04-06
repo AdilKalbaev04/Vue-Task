@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main class="Cont_Main">
     <div class="wrapper">
       <div class="text">
         <span class="text_title">CREATIVE DESIGN AGENCY</span>
@@ -11,7 +11,7 @@
           <span>Image from </span> <a class="link" href="">Freepik</a>
         </div>
         <div class="icons_cont">
-          <a href="#" class="icon-facebookV2"></a>
+          <a href="#" class="icon-facebook"></a>
           <a href="#" class="icon-instagramV2"></a>
           <a href="#" class="icon-twitterV2"></a>
           <a href="#" class="icon-youtubeV2"></a>
@@ -38,11 +38,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Open+Sans&display=swap');
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?m79ii0');
-  src: url('fonts/icomoon.eot?m79ii0#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?m79ii0') format('truetype'),
-    url('fonts/icomoon.woff?m79ii0') format('woff'),
-    url('fonts/icomoon.svg?m79ii0#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?9jov7n');
+  src: url('fonts/icomoon.eot?9jov7n#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?9jov7n') format('truetype'),
+    url('fonts/icomoon.woff?9jov7n') format('woff'),
+    url('fonts/icomoon.svg?9jov7n#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -55,10 +55,9 @@
   speak: never;
   font-style: normal;
   font-weight: normal;
+  text-decoration: none;
   font-variant: normal;
   text-transform: none;
-  color: white;
-  text-decoration: none;
   line-height: 1;
 
   /* Better Font Rendering =========== */
@@ -66,20 +65,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-twitter:before {
+  content: '\e900';
+}
+.icon-youtube:before {
+  content: '\e904';
+}
+.icon-twitter1:before {
+  content: '\e905';
+}
+.icon-facebook:before {
+  content: '\e906';
+  color: white;
+}
+.icon-facebook1:before {
+  content: '\e907';
+}
 .icon-youtubeV2:before {
   content: '\e903';
+  color: white;
 }
 .icon-instagramV2:before {
   content: '\e901';
+  color: white;
 }
 .icon-twitterV2:before {
   content: '\e902';
-}
-.icon-facebookV2:before {
-  content: '\e900';
+  color: white;
 }
 
-.container {
+.Cont_Main {
   background-image: url('/background.jpg');
   object-fit: cover;
   background-repeat: no-repeat;
@@ -158,5 +173,13 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: 300;
+}
+@media screen and (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .icons_cont {
+    display: none;
+  }
 }
 </style>

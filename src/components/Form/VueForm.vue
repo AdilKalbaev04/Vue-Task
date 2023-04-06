@@ -1,0 +1,171 @@
+<template>
+  <div class="Cont_Form">
+    <div class="line">
+      <div class="form_block">
+        <div class="block_1">
+          <span class="block_1_title">Contact Info</span>
+          <span class="block_1_text">
+            <i class="icon-call"></i> +1 (234) 567-8910
+          </span>
+          <span class="block_1_text"
+            ><i class="icon-mail"></i> contact@yourmail.com
+          </span>
+          <span class="block_1_text"
+            ><i class="icon-location"></i> 203, Envato Labs, Behind Alis Steet,
+            Australia</span
+          >
+          <div class="icons_cont">
+            <i class="icon-facebook1"></i>
+            <i class="icon-twitter"></i>
+            <i class="icon-instagramV2"></i>
+            <i class="icon-youtube"></i>
+          </div>
+        </div>
+        <form class="block_2">
+          <VInput placeholder="Enter your Name" type="text" />
+          <VInput placeholder="Enter a valid email address" type="email" />
+          <VInput placeholder="Enter your messege" type="textarea" />
+          <VButton class="block_2_btn">SUBMIT</VButton>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script></script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Open+Sans&display=swap');
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot?nxt0ns');
+  src: url('fonts/icomoon.eot?nxt0ns#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?nxt0ns') format('truetype'),
+    url('fonts/icomoon.woff?nxt0ns') format('woff'),
+    url('fonts/icomoon.svg?nxt0ns#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 30px;
+  text-decoration: none;
+  color: #545af8;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-location:before {
+  content: '\e90a';
+}
+.icon-mail:before {
+  content: '\e908';
+}
+.icon-call:before {
+  content: '\e909';
+}
+.icon-twitter:before {
+  content: '\e900';
+}
+.icon-youtube:before {
+  content: '\e904';
+  color: #545af8;
+}
+.icon-twitter1:before {
+  content: '\e905';
+}
+.icon-facebook:before {
+  content: '\e906';
+}
+.icon-facebook1:before {
+  content: '\e907';
+}
+.icon-youtubeV2:before {
+  content: '\e903';
+}
+.icon-instagramV2:before {
+  content: '\e901';
+  color: #545af8;
+}
+.icon-twitterV2:before {
+  content: '\e902';
+}
+
+.Cont_Form {
+  min-height: 357px;
+  position: relative;
+  background: #e5e5e5;
+}
+.block_1_title {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+.icons_cont {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+.line {
+  width: 100%;
+  height: 224px;
+  margin-top: 141px;
+  background: linear-gradient(#545af8, #e84a90);
+}
+.form_block {
+  position: absolute;
+  top: -87px;
+  left: 243px;
+  height: 378px;
+  width: 965px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.block_1_text {
+  display: flex;
+  gap: 5px;
+}
+.block_1 {
+  display: flex;
+  flex-direction: column;
+  width: 274px;
+  gap: 12px;
+}
+.block_2 {
+  width: 475px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.block_2_btn {
+  color: #ffffff !important;
+  background-color: #545af8 !important;
+  border-style: none;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: 600;
+}
+.block_1_text {
+  font-family: 'Open Sans', sans-serif;
+  border-style: none;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+</style>
