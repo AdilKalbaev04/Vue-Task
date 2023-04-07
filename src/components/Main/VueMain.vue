@@ -26,7 +26,7 @@
           change.</span
         >
         <b class="text_3">Duis aute irure dolor in reprehenderit</b>
-        <VButton class="btn">Learn more</VButton>
+        <a href="#"> <VButton class="btn">Learn more</VButton></a>
       </div>
     </div>
   </main>
@@ -35,7 +35,6 @@
 <script setup></script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Open+Sans&display=swap');
 @font-face {
   font-family: 'icomoon';
   src: url('fonts/icomoon.eot?9jov7n');

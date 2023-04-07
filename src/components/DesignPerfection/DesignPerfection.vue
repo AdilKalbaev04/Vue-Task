@@ -11,7 +11,9 @@
       <div class="link_cont">
         <span>Image from </span> <a class="link" href="">Freepik</a>
       </div>
-      <VButton class="btn">Learn more</VButton>
+      <a href="#">
+        <VButton class="btn">Learn more</VButton>
+      </a>
     </div>
     <div class="circle"></div>
   </div>
@@ -28,7 +30,6 @@
   padding: 80px;
 }
 .img_wrap {
-  min-height: 479px;
   max-width: 695px;
 }
 .img {

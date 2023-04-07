@@ -62,7 +62,6 @@ const submitForm = (event) => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Open+Sans&display=swap');
 @font-face {
   font-family: 'icomoon';
   src: url('fonts/icomoon.eot?nxt0ns');
@@ -129,7 +128,7 @@ const submitForm = (event) => {
 }
 
 .Cont_Form {
-  min-height: 357px;
+  min-height: 400px;
   position: relative;
   background: #e5e5e5;
 }
@@ -152,14 +151,17 @@ const submitForm = (event) => {
 }
 .form_block {
   position: absolute;
-  top: -87px;
+  top: -27px;
   left: 243px;
-  height: 378px;
-  width: 965px;
+  max-width: 965px;
   background: white;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
+  padding: 60px;
+  gap: 70px;
+  align-items: center;
+  box-shadow: 0px 3px 10px 2px #cccc;
 }
 .block_1_text {
   display: flex;
@@ -192,5 +194,13 @@ const submitForm = (event) => {
   font-size: 1.25rem;
   letter-spacing: 1px;
   font-weight: 400;
+}
+@media screen and (max-width: 1240px) {
+  .form_block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+  }
 }
 </style>
