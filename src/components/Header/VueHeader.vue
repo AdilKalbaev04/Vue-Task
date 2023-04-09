@@ -3,13 +3,13 @@
     <div class="logo_cont">
       <a href="#"> <img class="logo" src="../icons/logo.png" alt="" /></a>
       <div class="icons_cont">
-        <a href="#">
+        <a href="https://www.facebook.com/" target="_blank">
           <img class="icons" src="../icons/facebook.png" alt="" />
         </a>
-        <a href="#">
+        <a href="https://twitter.com/" target="_blank">
           <img class="icons" src="../icons/twitter.png" alt="" />
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/" target="_blank">
           <img class="icons" src="../icons/instagram.png" alt="" />
         </a>
       </div>

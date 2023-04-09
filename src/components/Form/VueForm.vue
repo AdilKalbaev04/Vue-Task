@@ -1,48 +1,47 @@
 <template>
   <div class="Cont_Form">
-    <div class="line">
-      <div class="form_block">
-        <div class="block_1">
-          <span class="block_1_title">Contact Info</span>
-          <span class="block_1_text">
-            <i class="icon-call"></i> +1 (234) 567-8910
-          </span>
-          <span class="block_1_text"
-            ><i class="icon-mail"></i> contact@yourmail.com
-          </span>
-          <span class="block_1_text"
-            ><i class="icon-location"></i> 203, Envato Labs, Behind Alis Steet,
-            Australia</span
-          >
-          <div class="icons_cont">
-            <a href="#" class="icon-facebook1"></a>
-            <a href="#" class="icon-twitter"></a>
-            <a href="#" class="icon-instagramV2"></a>
-            <a href="#" class="icon-youtube"></a>
-          </div>
+    <div class="line"></div>
+    <div class="form_block">
+      <div class="block_1">
+        <span class="block_1_title">Contact Info</span>
+        <span class="block_1_text">
+          <i class="icon-call"></i> +1 (234) 567-8910
+        </span>
+        <span class="block_1_text"
+          ><i class="icon-mail"></i> contact@yourmail.com
+        </span>
+        <span class="block_1_text"
+          ><i class="icon-location"></i> 203, Envato Labs, Behind Alis Steet,
+          Australia</span
+        >
+        <div class="icons_cont">
+          <a href="#" class="icon-facebook1"></a>
+          <a href="#" class="icon-twitter"></a>
+          <a href="#" class="icon-instagramV2"></a>
+          <a href="#" class="icon-youtube"></a>
         </div>
-        <form @submit.prevent="submitForm" class="block_2">
-          <VInput
-            name="name"
-            v-model="name"
-            placeholder="Enter your Name"
-            type="text"
-          />
-          <VInput
-            name="email"
-            v-model="email"
-            placeholder="Enter a valid email address"
-            type="email"
-          />
-          <VInput
-            name="desc"
-            v-model="desc"
-            placeholder="Enter your messege"
-            type="textarea"
-          />
-          <VButton class="block_2_btn">SUBMIT</VButton>
-        </form>
       </div>
+      <form @submit.prevent="submitForm" class="block_2">
+        <VInput
+          name="name"
+          v-model="name"
+          placeholder="Enter your Name"
+          type="text"
+        />
+        <VInput
+          name="email"
+          v-model="email"
+          placeholder="Enter a valid email address"
+          type="email"
+        />
+        <VInput
+          name="desc"
+          v-model="desc"
+          placeholder="Enter your messege"
+          type="textarea"
+        />
+        <VButton class="block_2_btn">SUBMIT</VButton>
+      </form>
     </div>
   </div>
 </template>
@@ -56,8 +55,14 @@ const desc = ref('')
 
 const submitForm = (event) => {
   event.preventDefault()
-  const data = { name: name.value, email: email.value, desc: desc.value }
-  sendData(data)
+  const data = {
+    name: name.value,
+    email: email.value,
+    desc: desc.value
+  }
+  sendData(data).finally(() => {
+    alert('Send')
+  })
 }
 </script>
 
@@ -196,11 +201,21 @@ const submitForm = (event) => {
   font-weight: 400;
 }
 @media screen and (max-width: 1240px) {
+  .line {
+    display: none;
+  }
   .form_block {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .block_2 {
+    max-width: 475px;
+    width: auto;
   }
 }
 </style>

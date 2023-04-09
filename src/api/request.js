@@ -1,7 +1,7 @@
 import ky from 'ky'
 
 const StrapiApi = ky.create({
-  prefixUrl: 'http://localhost:1337/api/'
+  prefixUrl: import.meta.env.VITE_STRAPI_API
 })
 
 export const sendData = (data) => {

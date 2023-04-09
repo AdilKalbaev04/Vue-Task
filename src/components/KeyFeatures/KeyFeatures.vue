@@ -32,7 +32,9 @@
       </div>
     </div>
     <div class="link_cont">
-      <span>Image from </span> <a class="link" href="">Freepik</a>
+      <span>Image from </span>  <a class="link" href="https://www.freepik.com/" target="_blank"
+              >Freepik</a
+            >
     </div>
   </div>
 </template>

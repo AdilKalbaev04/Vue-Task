@@ -9,7 +9,10 @@
           catalyzes their business and brand to take action.
         </p>
         <div class="link_cont">
-          <span>Image from </span> <a class="link" href="">Freepik</a>
+          <span>Image from </span>
+          <a class="link" href="https://www.freepik.com/" target="_blank"
+            >Freepik</a
+          >
         </div>
       </div>
       <div class="img_wrap_3"><img class="img3" src="/ava2.jpg" alt="" /></div>
@@ -26,7 +29,7 @@
   </div>
 </template>
 
-<script></script>
+<script setup></script>
 
 <style scoped>
 .block_cont {

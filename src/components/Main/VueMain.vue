@@ -8,13 +8,32 @@
           great ideas
         </h1>
         <div class="link_cont">
-          <span>Image from </span> <a class="link" href="">Freepik</a>
+          <span>Image from </span>
+          <a class="link" href="https://www.freepik.com/" target="_blank"
+            >Freepik</a
+          >
         </div>
         <div class="icons_cont">
-          <a href="#" class="icon-facebook"></a>
-          <a href="#" class="icon-instagramV2"></a>
-          <a href="#" class="icon-twitterV2"></a>
-          <a href="#" class="icon-youtubeV2"></a>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="icon-facebook"
+          ></a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="icon-instagramV2"
+          ></a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            class="icon-twitterV2"
+          ></a>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            class="icon-youtubeV2"
+          ></a>
         </div>
       </div>
       <div class="text2">
@@ -26,15 +45,84 @@
           change.</span
         >
         <b class="text_3">Duis aute irure dolor in reprehenderit</b>
-        <a href="#"> <VButton class="btn">Learn more</VButton></a>
+        <div>
+          <VButton @click="showModal = true">LEARN MORE</VButton>
+
+          <BackDrop @click="showModal = false" v-if="showModal" />
+          <div v-if="showModal">
+            <div class="modal">
+              <div class="info_cont">
+                <span class="text_2"
+                  >We combine local knowledge with global <br />
+                  expertise, strategy with design, empathy with <br />
+                  creativity, meaning with magic. Reach out to <br />
+                  discuss how we might help you accelerate <br />
+                  change.</span
+                >
+                <b class="short_text">Duis aute irure dolor in reprehenderit</b>
+              </div>
+              <button class="btn_modal" @click="showModal = false">
+                <img class="exit" src="/exit.png" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+import BackDrop from '../UI/BackDrop/Backdrop.vue'
+import { ref } from 'vue'
+const showModal = ref(false)
+</script>
 
 <style scoped>
+.info_cont {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  text-align: center;
+}
+.text_2 {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.short_text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+}
+.btn_modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: #e84a90;
+}
+.exit {
+  width: 20px;
+  height: 20px;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e84a90;
+  padding: 20px;
+  z-index: 9999;
+  max-width: 500px;
+  min-height: 400px;
+  border-radius: 20px;
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url('fonts/icomoon.eot?9jov7n');
@@ -184,6 +272,18 @@
   }
   .icons_cont {
     display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text2 {
+    padding: 0;
+  }
+  .text {
+    align-items: center;
+  }
+  .title {
+    font-size: 2rem;
   }
 }
 </style>

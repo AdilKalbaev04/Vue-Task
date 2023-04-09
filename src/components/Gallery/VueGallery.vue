@@ -1,5 +1,8 @@
 <template>
   <div class="gallery">
+    <!-- <div v-for="item in galleryds[0]?.images" :key="item.id">
+      <img :src="item.url" alt="bla" />
+    </div> -->
     <div class="background"></div>
     <div class="gallery__thumbnails">
       <div
@@ -30,15 +33,50 @@
         pariatur.
       </p>
       <div class="link_cont">
-        <span>Image from </span> <a class="link" href="">Freepik</a>
+        <span>Image from </span>
+        <a class="link" href="https://www.freepik.com/" target="_blank"
+          >Freepik</a
+        >
       </div>
-      <a href="#"> <VButton class="btn">Learn more</VButton></a>
+
+      <div>
+        <VButton class="btn" @click="showModal = true">Learn more</VButton>
+
+        <BackDrop @click="showModal = false" v-if="showModal" />
+        <div v-if="showModal">
+          <div class="modal">
+            <div class="info_cont">
+              <span class="text_2"> Our Portfolio </span>
+              <p class="short_text">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.
+              </p>
+            </div>
+            <button class="btn_modal" @click="showModal = false">
+              <img class="exit" src="/exit.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import BackDrop from '../UI/BackDrop/Backdrop.vue'
 import { ref, computed } from 'vue'
+const showModal = ref(false)
+// import axios from 'axios'
+// const galleryds = ref([])
+
+// axios
+//   .get('http://localhost:1337/api/galleries?populate=images')
+//   .then((response) => {
+//     console.log(response.data.data[0].images)
+//     galleryds.value = response.data.data
+//   })
 
 const photos = ref([
   {
@@ -87,6 +125,49 @@ const activePhoto = computed(() => photos.value[activePhotoIndex.value])
 </script>
 
 <style scoped>
+.info_cont {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  text-align: center;
+}
+.text_2 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-family: 'Bai Jamjuree';
+  font-weight: 400;
+  color: white;
+}
+.short_text {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+.btn_modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: #545af8 !important;
+}
+.exit {
+  width: 20px;
+  height: 20px;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #545af8 !important;
+  padding: 20px;
+  z-index: 9999;
+  max-width: 500px;
+  min-height: 400px;
+  border-radius: 20px;
+}
 .link_cont {
   font-size: 1.25rem;
   font-weight: 300;
@@ -156,6 +237,7 @@ const activePhoto = computed(() => photos.value[activePhotoIndex.value])
   flex-wrap: wrap;
   width: calc(100% - 20px);
   max-width: 1030px;
+  justify-content: center;
 }
 
 .gallery__thumbnail {
@@ -196,5 +278,23 @@ const activePhoto = computed(() => photos.value[activePhotoIndex.value])
 .gallery__modal-content img {
   width: 100%;
   object-fit: contain;
+}
+
+@media screen and (max-width: 1100px) {
+  .background {
+    display: none;
+  }
+  .text_cont {
+    display: none;
+  }
+  .gallery {
+    max-width: 1506px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: initial;
+    margin-bottom: 250px;
+    min-height: 900px;
+  }
 }
 </style>

@@ -13,9 +13,32 @@
             anim id est laborum.
           </p>
           <div class="link_cont">
-            <span>Image from </span> <a class="link" href="">Freepik</a>
+            <span>Image from </span>
+            <a class="link" href="https://www.freepik.com/" target="_blank"
+              >Freepik</a
+            >
           </div>
-          <a href="#"> <VButton class="btn">read more</VButton></a>
+          <div>
+            <VButton class="btn" @click="showModal = true">read more</VButton>
+
+            <BackDrop @click="showModal = false" v-if="showModal" />
+            <div v-if="showModal">
+              <div class="modal">
+                <div class="info_cont">
+                  <span class="text_2">Digital Marketing</span>
+                  <p class="short_text">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+                <button class="btn_modal" @click="showModal = false">
+                  <img class="exit" src="/exit.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="background_2"></div>
@@ -23,9 +46,56 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import BackDrop from '../UI/BackDrop/Backdrop.vue'
+import { ref } from 'vue'
+const showModal = ref(false)
+</script>
 
 <style scoped>
+.info_cont {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  text-align: center;
+}
+.text_2 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-family: 'Bai Jamjuree';
+  font-weight: 400;
+  color: white;
+}
+.short_text {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+.btn_modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: #545af8 !important;
+}
+.exit {
+  width: 20px;
+  height: 20px;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #545af8 !important;
+  padding: 20px;
+  z-index: 9999;
+  max-width: 500px;
+  min-height: 400px;
+  border-radius: 20px;
+}
 .Cont_block_6 {
   margin-top: 130px;
   margin-bottom: 130px;
@@ -126,6 +196,5 @@
     padding: 20px;
     flex-direction: column;
   }
- 
 }
 </style>
