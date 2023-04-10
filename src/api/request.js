@@ -5,5 +5,5 @@ const StrapiApi = ky.create({
 })
 
 export const sendData = (data) => {
-  return StrapiApi.post('data.json', { json: data })
+  return StrapiApi.post('data-v2s', { json: data })
 }
