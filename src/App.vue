@@ -14,7 +14,7 @@ import './assets/css/App.css'
 </script>
 
 <template>
-  <div class="container">
+  <div>
     <VueHeader />
     <VueMain />
     <KeyFeatures />

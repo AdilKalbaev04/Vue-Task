@@ -32,9 +32,10 @@
       </div>
     </div>
     <div class="link_cont">
-      <span>Image from </span>  <a class="link" href="https://www.freepik.com/" target="_blank"
-              >Freepik</a
-            >
+      <span>Image from </span>
+      <a class="link" href="https://www.freepik.com/" target="_blank"
+        >Freepik</a
+      >
     </div>
   </div>
 </template>
@@ -67,7 +68,7 @@
 }
 .block_2_icons {
   max-width: 275px;
-  color: #ffffff;
+  color: #111111;
   background-color: #e5e5e5;
   height: 254px;
   display: flex;
@@ -79,7 +80,7 @@
 }
 .block_3_icons {
   max-width: 275px;
-  color: #ffffff;
+  color: #111111;
   background-color: #e5e5e5;
   height: 254px;
   display: flex;

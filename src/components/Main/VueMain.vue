@@ -273,12 +273,13 @@ const showModal = ref(false)
   .icons_cont {
     display: none;
   }
+  .text2 {
+    padding: 20px;
+    max-width: unset;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .text2 {
-    padding: 0;
-  }
   .text {
     align-items: center;
   }

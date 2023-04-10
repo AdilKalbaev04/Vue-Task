@@ -160,6 +160,7 @@ const showModal = ref(false)
   .Cont_block_3 {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
   }
   .circle {
     display: none;

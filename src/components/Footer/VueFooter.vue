@@ -29,6 +29,7 @@
 .footer_text {
   color: white;
   text-align: center;
+  margin-top: 20px;
 }
 .link_cont {
   display: flex;

@@ -146,7 +146,6 @@
   font-size: 1.25rem;
   line-height: 1.2;
   font-family: 'Bai Jamjuree';
-  color: #545af8 !important;
 }
 .title2 {
   text-transform: uppercase;
@@ -179,7 +178,7 @@
   .wrapper {
     display: flex;
     gap: 20px;
-    padding: 80px;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
   }

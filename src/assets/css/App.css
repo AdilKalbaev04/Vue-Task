@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Open+Sans:wght@300;400&display=swap');
 * {
   box-sizing: border-box;
+  padding: 0;
 }
 
 body {
   margin: 0;
+
   font-family: 'Bai Jamjuree', sans-serif;
   font-family: 'Open Sans', sans-serif;
 }
 .container {
-  max-width: 1506px;
+  max-width: 1519px;
   margin: 0 auto;
 }
 a {

@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery">
+  <div class="gallery container">
     <!-- <div v-for="item in galleryds[0]?.images" :key="item.id">
       <img :src="item.url" alt="bla" />
     </div> -->

@@ -1,5 +1,5 @@
 <template>
-  <div class="Cont_block_6">
+  <div class="Cont_block_6 container">
     <div class="wrapper">
       <div class="background"></div>
       <div class="block_6">

@@ -1,6 +1,5 @@
 <template>
   <div class="Cont_Form">
-    <div class="line"></div>
     <div class="form_block">
       <div class="block_1">
         <span class="block_1_title">Contact Info</span>
@@ -43,6 +42,7 @@
         <VButton class="block_2_btn">SUBMIT</VButton>
       </form>
     </div>
+    <div class="line"></div>
   </div>
 </template>
 
@@ -60,6 +60,7 @@ const submitForm = (event) => {
     email: email.value,
     desc: desc.value
   }
+
   sendData(data).finally(() => {
     alert('Send')
   })
@@ -136,6 +137,10 @@ const submitForm = (event) => {
   min-height: 400px;
   position: relative;
   background: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
 }
 .block_1_title {
   font-family: 'Bai Jamjuree', sans-serif;
@@ -151,13 +156,14 @@ const submitForm = (event) => {
 .line {
   width: 100%;
   height: 224px;
-  margin-top: 141px;
   background: linear-gradient(#545af8, #e84a90);
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 .form_block {
-  position: absolute;
-  top: -27px;
-  left: 243px;
   max-width: 965px;
   background: white;
   border-radius: 10px;
@@ -166,6 +172,7 @@ const submitForm = (event) => {
   padding: 60px;
   gap: 70px;
   align-items: center;
+  z-index: 2;
   box-shadow: 0px 3px 10px 2px #cccc;
 }
 .block_1_text {
@@ -201,14 +208,12 @@ const submitForm = (event) => {
   font-weight: 400;
 }
 @media screen and (max-width: 1240px) {
-  .line {
-    display: none;
-  }
   .form_block {
     position: relative;
     top: 0;
     left: 0;
     flex-direction: column;
+    margin-bottom: 20px;
   }
 }
 
