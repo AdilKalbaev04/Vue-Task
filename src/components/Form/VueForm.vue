@@ -62,7 +62,9 @@ const submitForm = (event) => {
   }
 
   sendData(data).finally(() => {
-    alert('Send')
+    name.value = ''
+    email.value = ''
+    desc.value = ''
   })
 }
 </script>
