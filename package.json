@@ -10,8 +10,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "js-cookie": "^3.0.1",
     "ky": "^0.33.3",
-    "vue": "^3.2.47"
+    "lightgallery": "^2.7.1",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

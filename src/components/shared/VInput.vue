@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from 'vue'
 const emit = defineEmits(['update:modelValue'])
 
 // eslint-disable-next-line no-unused-vars

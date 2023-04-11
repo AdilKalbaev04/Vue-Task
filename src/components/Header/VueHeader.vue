@@ -3,6 +3,8 @@
     <div class="logo_cont">
       <a href="#"> <img class="logo" src="../icons/logo.png" alt="" /></a>
       <div class="icons_cont">
+        <a class="auth" href="/Admin">Sing in</a>
+
         <a href="https://www.facebook.com/" target="_blank">
           <img class="icons" src="../icons/facebook.png" alt="" />
         </a>
@@ -47,5 +49,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.auth {
+  text-decoration: none;
+  color: #111111;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 400;
 }
 </style>
