@@ -2,17 +2,11 @@
   <main class="Cont_Main">
     <div class="wrapper">
       <div class="text">
-        <span class="text_title">CREATIVE DESIGN AGENCY</span>
+        <span class="text_title"> {{ dataPage?.data?.main?.sometext }}</span>
         <h1 class="title">
-          We live to turn <br />
-          great ideas
+          {{ dataPage?.data?.main?.title }}
         </h1>
-        <div class="link_cont">
-          <span>Image from </span>
-          <a class="link" href="https://www.freepik.com/" target="_blank"
-            >Freepik</a
-          >
-        </div>
+
         <div class="icons_cont">
           <a
             href="https://www.facebook.com/"
@@ -37,14 +31,9 @@
         </div>
       </div>
       <div class="text2">
-        <span class="text2_desc"
-          >We combine local knowledge with global <br />
-          expertise, strategy with design, empathy with <br />
-          creativity, meaning with magic. Reach out to <br />
-          discuss how we might help you accelerate <br />
-          change.</span
-        >
-        <b class="text_3">Duis aute irure dolor in reprehenderit</b>
+        <span class="text2_desc">{{ dataPage?.data?.main?.desc }}</span>
+        <b class="text_3">{{ dataPage?.data?.main?.text2 }}</b>
+
         <div>
           <VButton @click="showModal = true">LEARN MORE</VButton>
 
@@ -52,14 +41,8 @@
           <div v-if="showModal">
             <div class="modal">
               <div class="info_cont">
-                <span class="text_2"
-                  >We combine local knowledge with global <br />
-                  expertise, strategy with design, empathy with <br />
-                  creativity, meaning with magic. Reach out to <br />
-                  discuss how we might help you accelerate <br />
-                  change.</span
-                >
-                <b class="short_text">Duis aute irure dolor in reprehenderit</b>
+                <span class="text_2">{{ dataPage?.data?.main?.desc }}</span>
+                <b class="short_text">{{ dataPage?.data?.main?.text2 }}</b>
               </div>
               <button class="btn_modal" @click="showModal = false">
                 <img class="exit" src="/exit.png" alt="" />
@@ -73,8 +56,15 @@
 </template>
 
 <script setup>
-import BackDrop from '../UI/BackDrop/Backdrop.vue'
-import { ref } from 'vue'
+import BackDrop from '../UI/BackDrop/BackDrop.vue'
+import { reactive, ref } from 'vue'
+import { getDataImg } from '../../api/request'
+const dataPage = reactive({
+  data: {}
+})
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
 const showModal = ref(false)
 </script>
 
@@ -254,7 +244,7 @@ const showModal = ref(false)
 }
 .icons_cont {
   position: absolute;
-  top: 515px;
+  top: 460px;
   left: 0;
   display: flex;
   align-items: center;

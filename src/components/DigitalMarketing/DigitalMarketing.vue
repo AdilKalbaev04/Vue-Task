@@ -3,21 +3,20 @@
     <div class="wrapper">
       <div class="background"></div>
       <div class="block_6">
-        <div class="img_wrap"><img class="img" src="/static.jpg" alt="" /></div>
+        <div class="img_wrap">
+          <img
+            class="img"
+            :src="dataPage.data.digital_marketing?.images.url"
+            alt=""
+          />
+        </div>
         <div class="text_cont">
-          <span class="title"> Digital Marketing</span>
+          <span class="title">{{
+            dataPage?.data?.digital_marketing?.title
+          }}</span>
           <p class="text">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            {{ dataPage?.data?.digital_marketing?.desc }}
           </p>
-          <div class="link_cont">
-            <span>Image from </span>
-            <a class="link" href="https://www.freepik.com/" target="_blank"
-              >Freepik</a
-            >
-          </div>
           <div>
             <VButton class="btn" @click="showModal = true">read more</VButton>
 
@@ -25,12 +24,11 @@
             <div v-if="showModal">
               <div class="modal">
                 <div class="info_cont">
-                  <span class="text_2">Digital Marketing</span>
+                  <span class="text_2">{{
+                    dataPage?.data?.digital_marketing?.title
+                  }}</span>
                   <p class="short_text">
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                    {{ dataPage?.data?.digital_marketing?.desc }}
                   </p>
                 </div>
                 <button class="btn_modal" @click="showModal = false">
@@ -47,8 +45,16 @@
 </template>
 
 <script setup>
-import BackDrop from '../UI/BackDrop/Backdrop.vue'
-import { ref } from 'vue'
+import BackDrop from '../UI/BackDrop/BackDrop.vue'
+import { ref, reactive } from 'vue'
+import { getDataImg } from '../../api/request'
+const dataPage = reactive({
+  data: {}
+})
+
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
 const showModal = ref(false)
 </script>
 

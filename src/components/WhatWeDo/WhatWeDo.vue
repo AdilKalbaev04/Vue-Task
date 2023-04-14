@@ -1,27 +1,28 @@
 <template>
   <div class="Cont_block_2">
     <div class="block_2">
-      <span class="title">What We Do</span>
+      <span class="title"> {{ dataPage?.data?.what_we_do?.title }}</span>
       <p class="text">
-        In mollis nunc sed id semper risus in hendrerit gravida. Aliquet enim
-        tortor at auctor urna nunc id cursus. Risus at ultrices mi tempus
-        imperdiet. Sapien pellentesque habitant morbi tristique senectus et
-        netus. Id cursus metus aliquam eleifend mi in. Quis commodo odio aenean
-        sed. Sollicitudin ac orci phasellus egestas tellus. Id velit ut tortor
-        pretium.
+        {{ dataPage?.data?.what_we_do?.desc }}
       </p>
-      <div class="img_wrap"><img class="img" src="/img2.png" alt="" /></div>
-      <div class="link_cont">
-        <span>Image from </span>
-        <a class="link" href="https://www.freepik.com/" target="_blank"
-          >Freepik</a
-        >
+      <div class="img_wrap">
+        <img class="img" :src="dataPage.data.what_we_do?.images.url" alt="" />
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from 'vue'
+import { getDataImg } from '../../api/request'
+const dataPage = reactive({
+  data: {}
+})
+
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
+</script>
 
 <style scoped>
 .Cont_block_2 {

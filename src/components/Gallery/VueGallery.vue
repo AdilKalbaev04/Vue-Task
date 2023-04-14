@@ -25,19 +25,10 @@
       </div>
     </div>
     <div class="text_cont">
-      <span class="title">Our Portfolio</span>
+      <span class="title"> {{ dataPage?.data?.our_portfolio?.title }}</span>
       <p class="text">
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur.
+        {{ dataPage?.data?.our_portfolio?.desc }}
       </p>
-      <div class="link_cont">
-        <span>Image from </span>
-        <a class="link" href="https://www.freepik.com/" target="_blank"
-          >Freepik</a
-        >
-      </div>
 
       <div>
         <VButton class="btn" @click="showModal = true">Learn more</VButton>
@@ -46,12 +37,11 @@
         <div v-if="showModal">
           <div class="modal">
             <div class="info_cont">
-              <span class="text_2"> Our Portfolio </span>
+              <span class="text_2">
+                {{ dataPage?.data?.our_portfolio?.title }}</span
+              >
               <p class="short_text">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
+                {{ dataPage?.data?.our_portfolio?.desc }}
               </p>
             </div>
             <button class="btn_modal" @click="showModal = false">
@@ -65,18 +55,16 @@
 </template>
 
 <script setup>
-import BackDrop from '../UI/BackDrop/Backdrop.vue'
-import { ref, computed } from 'vue'
+import BackDrop from '../UI/BackDrop/BackDrop.vue'
+import { ref, reactive, computed } from 'vue'
+import { getDataImg } from '../../api/request'
+const dataPage = reactive({
+  data: {}
+})
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
 const showModal = ref(false)
-// import axios from 'axios'
-// const galleryds = ref([])
-
-// axios
-//   .get('http://localhost:1337/api/galleries?populate=images')
-//   .then((response) => {
-//     console.log(response.data.data[0].images)
-//     galleryds.value = response.data.data
-//   })
 
 const photos = ref([
   {

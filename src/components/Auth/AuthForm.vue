@@ -6,60 +6,71 @@
       margin-right: auto;
       padding: 15px;
     "
-    v-if="!AdminInfo.isConfirmed"
+    v-if="!UserInfo.isConfirmed"
   >
     <form @submit.prevent="onSubmit">
-      <h1>Авторизация</h1>
+      <h1>Регистрация</h1>
+      <div class="text-field text-field_floating">
+        <input
+          required
+          class="text-field__input"
+          type="text"
+          v-model="User.username"
+        />
+        <label class="text-field__label" for="email">Create Login</label>
+      </div>
       <div class="text-field text-field_floating">
         <input
           required
           class="text-field__input"
           type="email"
-          v-model="Admin.identifier"
+          v-model="User.email"
         />
-        <label class="text-field__label" for="email">Email</label>
+        <label class="text-field__label" for="email">Create Email</label>
       </div>
       <div class="text-field text-field_floating">
         <input
           class="text-field__input"
           type="password"
-          v-model="Admin.password"
+          v-model="User.password"
         />
-        <label class="text-field__label" for="name">Password</label>
+        <label class="text-field__label" for="name">Create a password</label>
       </div>
       <v-button class="btn">submit</v-button>
     </form>
   </div>
-  <div v-if="AdminInfo.isConfirmed">
-    <AdminPanel />
+  <div v-if="UserInfo.isConfirmed">
+    <MainPage />
   </div>
 </template>
 
 <script setup>
 import { reactive } from 'vue'
-import { loginUser, getUserInfo } from '@/api/request'
 import Cookie from 'js-cookie'
-import AdminPanel from './AdminPanel.vue'
-const Admin = reactive({
-  identifier: '',
+import MainPage from '../../Page/MainPage.vue'
+import { registerUser, getUserInfo } from '../../api/request'
+import router from '../../router'
+const User = reactive({
+  username: '',
+  email: '',
   password: ''
 })
-const AdminInfo = reactive({
+const UserInfo = reactive({
   token: Cookie.get('key') || null,
   isConfirmed: false
 })
 
-if (AdminInfo.token) {
-  getUserInfo(AdminInfo.token).then((resp) => {
-    if (resp.role.type === 'admin') {
-      AdminInfo.isConfirmed = true
+if (UserInfo.token) {
+  getUserInfo(UserInfo.token).then((resp) => {
+    if (resp.role.type === 'Authenticated') {
+      UserInfo.isConfirmed = true
     }
   })
 }
 const onSubmit = () => {
-  loginUser(Admin).then((resp) => {
+  registerUser(User).then((resp) => {
     Cookie.set('key', resp.jwt)
-    location.reload()
+    router.push('/')
   })
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
   <div class="Cont_block_3">
-    <div class="img_wrap"><img class="img" src="/s.jpg" alt="" /></div>
+    <div class="img_wrap">
+      <img class="img" :src="dataPage.data.design_perfection?.images.url" alt="" />
+    </div>
     <div class="block_3_text">
-      <span class="title">Design Perfection</span>
+      <span class="title">{{ dataPage?.data?.design_perfection?.title }}</span>
       <p class="text">
-        We’re a small creative design studio based in New York, working with
-        adventurous clients and providing Creative Concept, Branding, Graphic
-        Design, Art Direction and Digital Communication services.
+        {{ dataPage?.data?.design_perfection?.desc }}
       </p>
       <div class="link_cont">
         <span>Image from </span>
@@ -22,12 +22,11 @@
         <div v-if="showModal">
           <div class="modal">
             <div class="info_cont">
-              <span class="text_2"> Design Perfection </span>
+              <span class="text_2"
+                >{{ dataPage?.data?.design_perfection?.title }}
+              </span>
               <p class="short_text">
-                We’re a small creative design studio based in New York, working
-                with adventurous clients and providing Creative Concept,
-                Branding, Graphic Design, Art Direction and Digital
-                Communication services.
+                {{ dataPage?.data?.design_perfection?.desc }}
               </p>
             </div>
             <button class="btn_modal" @click="showModal = false">
@@ -42,8 +41,16 @@
 </template>
 
 <script setup>
-import BackDrop from '../UI/BackDrop/Backdrop.vue'
-import { ref } from 'vue'
+import BackDrop from '../UI/BackDrop/BackDrop.vue'
+import { ref, reactive } from 'vue'
+import { getDataImg } from '../../api/request'
+const dataPage = reactive({
+  data: {}
+})
+
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
 const showModal = ref(false)
 </script>
 

@@ -1,35 +1,42 @@
 <template>
   <div class="Cont_block_5">
-    <div class="img_wrap"><img class="img" src="/ava1.jpg" alt="" /></div>
+    <div class="img_wrap">
+      <img class="img" :src="dataPage.data.about_us?.images.url" alt="" />
+    </div>
     <div class="block_cont">
       <div class="text_cont">
-        <span class="title">About Us</span>
+        <span class="title">{{ dataPage?.data?.about_us?.title }}</span>
         <p class="text">
-          We align leaders around a shared purpose and strategic story that
-          catalyzes their business and brand to take action.
+          {{ dataPage?.data?.about_us?.desc }}
         </p>
-        <div class="link_cont">
-          <span>Image from </span>
-          <a class="link" href="https://www.freepik.com/" target="_blank"
-            >Freepik</a
-          >
-        </div>
       </div>
-      <div class="img_wrap_3"><img class="img3" src="/ava2.jpg" alt="" /></div>
+      <div class="img_wrap_3">
+        <img class="img3" :src="dataPage.data.about_us?.images2.url" alt="" />
+      </div>
     </div>
     <div class="block_cont_2">
-      <div class="img_wrap_2"><img class="img2" src="/ava3.jpg" alt="" /></div>
+      <div class="img_wrap_2">
+        <img class="img2" :src="dataPage.data.about_us?.images3.url" alt="" />
+      </div>
       <div class="text_cont_2">
         <div class="svg_wrap"><img class="xz" src="/xz.png" alt="" /></div>
-        <span class="title_2"
-          >Teamwork is the ability to work together toward a common vision.
-        </span>
+        <span class="title_2">{{ dataPage?.data?.about_us?.banner }} </span>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from 'vue'
+import { getDataImg } from '../../api/request'
+const dataPage = reactive({
+  data: {}
+})
+
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
+</script>
 
 <style scoped>
 .block_cont {

@@ -1,16 +1,14 @@
 <template>
   <div class="Cont_Block_1">
     <div class="text_cont">
-      <span class="title">Key Features</span>
+      <span class="title"> {{ dataPage?.data?.key_features?.title }}</span>
       <p class="some_text">
-        Sample text. Click to select the text box. Click again or double click
-        to start <br />
-        editing the text.
+        {{ dataPage?.data?.key_features?.desc }}
       </p>
     </div>
     <div class="img_wrapper">
       <div class="img_wrap">
-        <img class="img" src="/public/ffff.jpg" alt="" />
+        <img class="img" :src="dataPage.data.key_features?.images.url" alt="" />
       </div>
       <div class="block_1_cont_icons">
         <div class="block_1_icons">
@@ -31,18 +29,29 @@
         </div>
       </div>
     </div>
-    <div class="link_cont">
-      <span>Image from </span>
-      <a class="link" href="https://www.freepik.com/" target="_blank"
-        >Freepik</a
-      >
-    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from 'vue'
+import { getDataImg } from '../../api/request'
+// let dataImg = reactive({
+//   img: {},
+//   title: ''
+// })
+const dataPage = reactive({
+  data: {}
+})
+
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
+</script>
 
 <style scoped>
+.Cont_Block_1 {
+  margin-bottom: 40px;
+}
 .img_wrap {
   max-width: 649px;
 }

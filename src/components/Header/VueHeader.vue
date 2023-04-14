@@ -4,6 +4,17 @@
       <a href="#"> <img class="logo" src="../icons/logo.png" alt="" /></a>
       <div class="icons_cont">
         <a class="auth" href="/Admin">Sing in</a>
+        <a class="auth" href="/auth">Sing up</a>
+        <!-- <a
+          class="auth"
+          @click="
+            () => {
+              Cookie.remove('key')
+            }
+          "
+          href="/Admin"
+          >EXIT</a
+        > -->
 
         <a href="https://www.facebook.com/" target="_blank">
           <img class="icons" src="../icons/facebook.png" alt="" />
@@ -20,12 +31,7 @@
 </template>
 
 <script setup>
-// import { defineProps, toRefs } from 'vue'
-// const props = defineProps({
-//   text: String
-// })
-
-// const { text } = toRefs(props)
+// import Cookie from 'js-cookie'
 </script>
 
 <style scoped>
@@ -54,6 +60,6 @@
   text-decoration: none;
   color: #111111;
   font-family: 'Bai Jamjuree', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 </style>

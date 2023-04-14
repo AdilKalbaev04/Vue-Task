@@ -2,47 +2,42 @@
   <div class="Cont_block_4">
     <div class="wrapper">
       <div class="block_4_text_1">
-        <img src="/svg1.svg" alt="" />
-        <span class="title">STRATEGY</span>
+        <img :src="dataPage.data.achievement?.images.url" alt="" />
+        <span class="title">{{ dataPage?.data?.achievement?.title }}</span>
         <p class="text">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur
+          {{ dataPage?.data?.achievement?.desc }}
         </p>
         <a class="link" href="#">MORE</a>
       </div>
       <div class="block_4_text_2">
-        <img src="/svg2.svg" alt="" />
-        <span class="title2">RESULTS</span>
+        <img :src="dataPage.data.achievement?.images2.url" alt="" />
+        <span class="title2">{{ dataPage?.data?.achievement?.title2 }}</span>
         <p class="text">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur
+          {{ dataPage?.data?.achievement?.desc2 }}
         </p>
         <a class="link" href="#">MORE</a>
       </div>
       <div class="block_4_text_3">
-        <img src="/svg3.svg" alt="" />
-        <span class="title">EXPERTISE</span>
+        <img :src="dataPage.data.achievement?.images3.url" alt="" />
+        <span class="title">{{ dataPage?.data?.achievement?.title3 }}</span>
         <p class="text">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur
+          {{ dataPage?.data?.achievement?.desc3 }}
         </p>
         <a class="link" href="#">MORE</a>
       </div>
       <div class="block_4_text_4">
-        <img src="/svg4.svg" alt="" />
-        <span class="title2">AWARDS</span>
+        <img :src="dataPage.data.achievement?.images4.url" alt="" />
+        <span class="title2">{{ dataPage?.data?.achievement?.title4 }}</span>
         <p class="text">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur
+          {{ dataPage?.data?.achievement?.desc4 }}
         </p>
         <a class="link" href="#">MORE</a>
       </div>
       <div class="block_4_text_5">
-        <img src="/svg5.svg" alt="" />
-        <span class="title">SUPPORT</span>
+        <img :src="dataPage.data.achievement?.images5.url" alt="" />
+        <span class="title">{{ dataPage?.data?.achievement?.title5 }}</span>
         <p class="text">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur
+          {{ dataPage?.data?.achievement?.desc5 }}
         </p>
         <a class="link" href="#">MORE</a>
       </div>
@@ -50,7 +45,17 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from 'vue'
+import { getDataImg } from '../../api/request'
+const dataPage = reactive({
+  data: {}
+})
+
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
+</script>
 
 <style scoped>
 .Cont_block_4 {
