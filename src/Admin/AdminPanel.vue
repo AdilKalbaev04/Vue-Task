@@ -1,6 +1,9 @@
 <template>
   <div class="cont">
-    <a href="/card">
+    <a class="link" href="/"
+      >Back <img class="back" src="../../public/back.svg" alt=""
+    /></a>
+    <a href="/item">
       <div class="panel_cont">
         <div class="panel">
           <div class="table">
@@ -91,6 +94,17 @@ const dataNow = new Date()
   align-items: center;
   justify-content: space-between;
 }
+.link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  text-decoration: none;
+  padding: 30px;
+}
+.back {
+  width: 25px;
+}
 .panel {
   padding: 20px;
   width: 1000px;
@@ -100,6 +114,7 @@ const dataNow = new Date()
   justify-content: center;
 }
 .cont {
+  font-family: 'Open Sans', sans-serif;
   background: rgb(24, 24, 38);
   width: 100%;
   height: 1000px;

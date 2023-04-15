@@ -5,6 +5,7 @@ import AdminPanel from '@/Admin/AdminPanel.vue'
 import VueCard from '@/Admin/VueCard.vue'
 import AuthForm from '../components/Auth/AuthForm.vue'
 import CardImg from '@/Admin/CardImg.vue'
+import VueItem from '@/Admin/VueItem.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/card',
       name: 'Card',
       component: VueCard
+    },
+    {
+      path: '/item',
+      name: 'Item',
+      component: VueItem
     },
     {
       path: '/auth',

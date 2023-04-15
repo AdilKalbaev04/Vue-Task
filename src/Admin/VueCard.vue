@@ -287,6 +287,7 @@ const onSubmitData = () => {
 }
 
 .card {
+  font-family: 'Open Sans', sans-serif;
   padding: 20px;
   width: 100%;
   background: rgb(24, 24, 38);

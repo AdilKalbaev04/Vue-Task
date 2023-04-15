@@ -5,6 +5,7 @@
       margin-left: auto;
       margin-right: auto;
       padding: 15px;
+      font-family: 'Open Sans', sans-serif;
     "
     v-if="!AdminInfo.isConfirmed"
   >
@@ -17,7 +18,13 @@
           type="email"
           v-model="Admin.identifier"
         />
-        <label class="text-field__label" for="email">Email</label>
+        <label
+          v-if="failReqest.errorMessege === 'Invalid identifier or password'"
+          class="text-field__label_2"
+          for="email"
+          >Неверный пороль или email</label
+        >
+        <label v-else class="text-field__label" for="email">Email</label>
       </div>
       <div class="text-field text-field_floating">
         <input
@@ -27,6 +34,9 @@
         />
         <label class="text-field__label" for="name">Password</label>
       </div>
+      <!-- <div v-if="failReqest.errorMessege === 'Invalid identifier or password'">
+        <h2>Неверный пороль или email</h2>
+      </div> -->
       <v-button class="btn">submit</v-button>
     </form>
   </div>
@@ -44,6 +54,10 @@ const Admin = reactive({
   identifier: '',
   password: ''
 })
+const failReqest = reactive({
+  errorMessege: ''
+})
+
 const AdminInfo = reactive({
   token: Cookie.get('key') || null,
   isConfirmed: false
@@ -56,11 +70,19 @@ if (AdminInfo.token) {
     }
   })
 }
+
 const onSubmit = () => {
-  loginUser(Admin).then((resp) => {
-    Cookie.set('key', resp.jwt)
-    location.reload()
-  })
+  loginUser(Admin)
+    .then((resp) => {
+      Cookie.set('key', resp.jwt)
+      location.reload()
+    })
+    .catch((error) => {
+      console.error(error)
+      return error.response.text().then((strapiErrorResponse) => {
+        failReqest.errorMessege = JSON.parse(strapiErrorResponse).error.message
+      })
+    })
 }
 </script>
 
@@ -75,7 +97,6 @@ p {
   font-weight: 500;
 }
 
-/* text field */
 .text-field {
   margin-bottom: 1rem;
 }
@@ -83,6 +104,12 @@ p {
 .text-field__label {
   display: block;
   margin-bottom: 0.25rem;
+}
+
+.text-field__label_2 {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: red;
 }
 
 .text-field__input {
