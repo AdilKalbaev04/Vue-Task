@@ -29,7 +29,8 @@
             <b>1</b>
             <span> Home </span>
             <i class="icon-home"></i>
-            <span>{{ dataNow }}</span>
+            <span>{{ dataPage.data.createdAt }}</span>
+            <span></span>
             <span>PUBLISHED</span>
             <i class="icon-pencil"></i>
             <i class="icon-copy"></i>
@@ -43,8 +44,15 @@
 
 <script setup>
 import Cookie from 'js-cookie'
+import { getDataImg } from '../api/request'
+import { reactive } from 'vue'
 
-const dataNow = new Date()
+const dataPage = reactive({
+  data: {}
+})
+getDataImg().then((res) => {
+  dataPage.data = res.data
+})
 </script>
 
 <style scoped>
