@@ -1,40 +1,38 @@
 <template>
   <div class="cont">
     <div class="header">
-      <a class="link" href="/"
+      <RouterLink class="link" to="/"
         >Back <img class="back" src="../../public/back.svg" alt=""
-      /></a>
+      /></RouterLink>
 
-      <a
+      <RouterLink
         class="auth_2"
         @click="
           () => {
             Cookie.remove('key')
           }
         "
-        href="/Admin"
-        >EXIT</a
+        to="/Admin"
+        >EXIT</RouterLink
       >
     </div>
-    <a href="/item">
-      <div class="panel_cont">
-        <div class="panel">
-          <div class="table">
-            <span>TITLE</span>
-            <span>IMAGES</span>
-            <span>CREATEDAT</span>
-            <span>STATE</span>
-          </div>
-          <div class="table_2">
-            <b>1</b>
-            <span> Home </span>
-            <span>{{ dataPage.data.createdAt }}</span>
-            <span></span>
-            <span>PUBLISHED</span>
-          </div>
+    <div class="panel_cont">
+      <div class="panel">
+        <div class="table">
+          <span>TITLE</span>
+          <span>CREATEDAT</span>
         </div>
+        <RouterLink class="a" to="/item">
+          <div class="table_2">
+            <div>
+              <b>1.</b>
+              <span> Home </span>
+            </div>
+            <span>{{ dataPage.data.createdAt }}</span>
+          </div>
+        </RouterLink>
       </div>
-    </a>
+    </div>
   </div>
 </template>
 
@@ -42,7 +40,7 @@
 import Cookie from 'js-cookie'
 import { getDataImg } from '../api/request'
 import { reactive } from 'vue'
-
+import { RouterLink } from 'vue-router'
 const dataPage = reactive({
   data: {}
 })
@@ -102,7 +100,8 @@ getDataImg().then((res) => {
   padding: 30px;
 }
 .table {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(50, 50, 77);
+  padding-bottom: 15px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -117,7 +116,7 @@ getDataImg().then((res) => {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: white;
+  color: rgb(165, 165, 186);
   text-decoration: none;
   padding: 30px;
 }
@@ -127,16 +126,20 @@ getDataImg().then((res) => {
 .panel {
   padding: 20px;
   width: 1000px;
-  background: rgb(123, 121, 255);
+  background: rgb(33, 33, 52);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 15px;
 }
 .cont {
   font-family: 'Open Sans', sans-serif;
   background: rgb(24, 24, 38);
   width: 100%;
   height: 1000px;
+}
+.a {
+  text-decoration: none;
 }
 b {
   color: white;

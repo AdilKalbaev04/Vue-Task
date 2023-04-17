@@ -1,17 +1,19 @@
 <template>
   <div class="cont">
-    <a href="/card">
+    <RouterLink to="/card">
       <div class="text_cont">
         <h2>ALL TEXT</h2>
       </div>
-    </a>
-    <a href="/card_img">
+    </RouterLink>
+    <RouterLink to="/card_img">
       <div class="img_cont"><h2>ALL IMAGES</h2></div>
-    </a>
+    </RouterLink>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 
 <style scoped>
 .cont {

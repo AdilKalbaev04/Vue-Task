@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-    <a class="link" href="/Admin"
+    <RouterLink class="link" to="/Admin"
       >Back <img class="back" src="../../public/back.svg" alt=""
-    /></a>
+    /></RouterLink>
     <h1>Admin Panel</h1>
     <form class="form" @submit.prevent="onSubmitData">
       <div class="table">
@@ -139,7 +139,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { changeDataImg, getDataImg } from '../api/request'
-
+import { RouterLink } from 'vue-router'
 let dataImg = reactive({
   img: {},
   title: ''

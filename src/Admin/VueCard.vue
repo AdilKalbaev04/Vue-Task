@@ -1,13 +1,13 @@
 <template>
   <div class="card">
-    <a class="link" href="/Admin"
+    <RouterLink class="link" to="/Admin"
       >Back <img class="back" src="../../public/back.svg" alt=""
-    /></a>
-
-  
+    /></RouterLink>
 
     <h1>Admin Panel</h1>
     <form class="form" @submit.prevent="onSubmitData">
+      <VButton class="btn">save</VButton>
+
       <div class="table">
         <h4>Main</h4>
         <span>Title: </span>
@@ -21,7 +21,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Key Features</h4>
@@ -38,7 +37,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>What We Do</h4>
@@ -55,7 +53,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Design Perfection</h4>
@@ -72,7 +69,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
 
       <div class="table">
@@ -96,8 +92,6 @@
           cols="30"
           rows="15"
         ></textarea>
-
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Digital Marketing</h4>
@@ -114,7 +108,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Our Portfolio</h4>
@@ -131,8 +124,6 @@
           cols="30"
           rows="15"
         ></textarea>
-
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Achievement</h4>
@@ -149,7 +140,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
 
       <div class="table">
@@ -167,7 +157,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Achievement</h4>
@@ -184,7 +173,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Achievement</h4>
@@ -201,7 +189,6 @@
           cols="30"
           rows="15"
         ></textarea>
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Achievement</h4>
@@ -218,8 +205,6 @@
           cols="30"
           rows="15"
         ></textarea>
-
-        <VButton class="btn">save</VButton>
       </div>
     </form>
   </div>
@@ -228,7 +213,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { changeData, getDataImg } from '../api/request'
-
+import { RouterLink } from 'vue-router'
 const dataPage = reactive({
   data: {}
 })
@@ -237,6 +222,7 @@ getDataImg().then((res) => {
 })
 const onSubmitData = () => {
   changeData(dataPage.data)
+  alert('Success: Saved')
 }
 </script>
 
@@ -295,6 +281,11 @@ const onSubmitData = () => {
   padding: 20px;
   width: 100%;
   background: rgb(24, 24, 38);
+  position: relative;
+}
+
+.desc {
+  resize: vertical;
 }
 
 input,
@@ -304,6 +295,9 @@ textarea {
   border: 1px solid rgb(74, 74, 106);
   background: none;
   color: #f2f2f2;
+  border-radius: 10px;
+
+  font-family: 'Open Sans';
 }
 a {
   color: white;
@@ -334,7 +328,6 @@ h1 {
   flex-direction: column;
   gap: 20px;
   max-width: 300px;
-  align-items: center;
   background: rgb(33, 33, 52);
   padding: 20px;
 }
@@ -342,6 +335,12 @@ h1 {
 .btn {
   width: 200px;
   background-color: rgb(73, 69, 255);
+  position: absolute;
+  top: 50px;
+  right: 130px;
+}
+.btn:active {
+  transform: scale(0.9);
 }
 .form {
   display: flex;
