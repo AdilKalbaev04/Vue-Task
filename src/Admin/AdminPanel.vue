@@ -28,13 +28,9 @@
           <div class="table_2">
             <b>1</b>
             <span> Home </span>
-            <i class="icon-home"></i>
             <span>{{ dataPage.data.createdAt }}</span>
             <span></span>
             <span>PUBLISHED</span>
-            <i class="icon-pencil"></i>
-            <i class="icon-copy"></i>
-            <i class="icon-basket"></i>
           </div>
         </div>
       </div>

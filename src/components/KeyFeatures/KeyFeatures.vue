@@ -12,19 +12,19 @@
       </div>
       <div class="block_1_cont_icons">
         <div class="block_1_icons">
-          <img src="/dev.svg" alt="" />
+          <i class="icon-dev"></i>
           <span class="block_1_icons_text">DEVELOPMENT</span>
         </div>
         <div class="block_2_icons">
-          <img src="/skill.svg" alt="" />
+          <i class="icon-skill"></i>
           <span class="block_1_icons_text">DEVELOPMENT</span>
         </div>
         <div class="block_3_icons">
-          <img src="/design.svg" alt="" />
+          <i class="icon-design"></i>
           <span class="block_1_icons_text">DEVELOPMENT</span>
         </div>
         <div class="block_4_icons">
-          <img src="/res.svg" alt="" />
+          <i class="icon-res"></i>
           <span class="block_1_icons_text">DEVELOPMENT</span>
         </div>
       </div>
@@ -49,6 +49,85 @@ getDataImg().then((res) => {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot?re0rmg');
+  src: url('fonts/icomoon.eot?re0rmg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?re0rmg') format('truetype'),
+    url('fonts/icomoon.woff?re0rmg') format('woff'),
+    url('fonts/icomoon.svg?re0rmg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 90px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-design:before {
+  content: '\e900';
+  color: #545af8;
+}
+.icon-res:before {
+  content: '\e901';
+}
+.icon-skill:before {
+  content: '\e902';
+  color: #545af8;
+}
+.icon-dev:before {
+  content: '\e950 ';
+}
+.icon-twitter:before {
+  content: '\e904';
+}
+.icon-instagramV2:before {
+  content: '\e905';
+  color: white;
+}
+.icon-twitterV2:before {
+  content: '\e906';
+  color: white;
+}
+.icon-youtubeV2:before {
+  content: '\e907';
+  color: white;
+}
+.icon-youtube:before {
+  content: '\e908';
+}
+.icon-twitter1:before {
+  content: '\e909';
+}
+.icon-facebook:before {
+  content: '\e90a';
+  color: white;
+}
+.icon-facebook1:before {
+  content: '\e90b';
+}
+.icon-mail:before {
+  content: '\e90c';
+}
+.icon-call:before {
+  content: '\e90d';
+}
+.icon-location:before {
+  content: '\e90e';
+}
 .Cont_Block_1 {
   margin-bottom: 40px;
 }

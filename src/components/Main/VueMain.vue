@@ -115,24 +115,22 @@ const showModal = ref(false)
 
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?9jov7n');
-  src: url('fonts/icomoon.eot?9jov7n#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?9jov7n') format('truetype'),
-    url('fonts/icomoon.woff?9jov7n') format('woff'),
-    url('fonts/icomoon.svg?9jov7n#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?re0rmg');
+  src:  url('fonts/icomoon.eot?re0rmg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?re0rmg') format('truetype'),
+    url('fonts/icomoon.woff?re0rmg') format('woff'),
+    url('fonts/icomoon.svg?re0rmg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^='icon-'],
-[class*=' icon-'] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
-  text-decoration: none;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
@@ -142,33 +140,54 @@ const showModal = ref(false)
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-design:before {
+  content: "\e900";
+}
+.icon-res:before {
+  content: "\e901";
+}
+.icon-skill:before {
+  content: "\e902";
+}
+.icon-dev:before {
+  content: "\e903";
+}
 .icon-twitter:before {
-  content: '\e900';
-}
-.icon-youtube:before {
-  content: '\e904';
-}
-.icon-twitter1:before {
-  content: '\e905';
-}
-.icon-facebook:before {
-  content: '\e906';
-  color: white;
-}
-.icon-facebook1:before {
-  content: '\e907';
-}
-.icon-youtubeV2:before {
-  content: '\e903';
-  color: white;
+  content: "\e904";
 }
 .icon-instagramV2:before {
-  content: '\e901';
+  content: "\e905";
   color: white;
 }
 .icon-twitterV2:before {
-  content: '\e902';
+  content: "\e906";
   color: white;
+}
+.icon-youtubeV2:before {
+  content: "\e907";
+  color: white;
+}
+.icon-youtube:before {
+  content: "\e908";
+}
+.icon-twitter1:before {
+  content: "\e909";
+}
+.icon-facebook:before {
+  content: "\e90a";
+  color: white;
+}
+.icon-facebook1:before {
+  content: "\e90b";
+}
+.icon-mail:before {
+  content: "\e90c";
+}
+.icon-call:before {
+  content: "\e90d";
+}
+.icon-location:before {
+  content: "\e90e";
 }
 
 .Cont_Main {
