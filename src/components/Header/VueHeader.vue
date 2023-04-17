@@ -3,18 +3,9 @@
     <div class="logo_cont">
       <a href="#"> <img class="logo" src="../icons/logo.png" alt="" /></a>
       <div class="icons_cont">
-        <a class="auth" href="/Admin">Sing in</a>
-        <a class="auth" href="/auth">Sing up</a>
-        <!-- <a
-          class="auth"
-          @click="
-            () => {
-              Cookie.remove('key')
-            }
-          "
-          href="/Admin"
-          >EXIT</a
-        > -->
+        <a class="auth" href="/Admin">Login</a>
+        <a class="auth_2" href="/auth">Sing up</a>
+     
 
         <a href="https://www.facebook.com/" target="_blank">
           <img class="icons" src="../icons/facebook.png" alt="" />
@@ -31,7 +22,6 @@
 </template>
 
 <script setup>
-// import Cookie from 'js-cookie'
 </script>
 
 <style scoped>
@@ -61,5 +51,19 @@
   color: #111111;
   font-family: 'Bai Jamjuree', sans-serif;
   font-weight: 500;
+}
+
+.auth_2 {
+  text-decoration: none;
+  color: white;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 500;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: #e84a90;
 }
 </style>

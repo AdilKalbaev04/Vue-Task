@@ -1,8 +1,21 @@
 <template>
   <div class="cont">
-    <a class="link" href="/"
-      >Back <img class="back" src="../../public/back.svg" alt=""
-    /></a>
+    <div class="header">
+      <a class="link" href="/"
+        >Back <img class="back" src="../../public/back.svg" alt=""
+      /></a>
+
+      <a
+        class="auth_2"
+        @click="
+          () => {
+            Cookie.remove('key')
+          }
+        "
+        href="/Admin"
+        >EXIT</a
+      >
+    </div>
     <a href="/item">
       <div class="panel_cont">
         <div class="panel">
@@ -29,6 +42,8 @@
 </template>
 
 <script setup>
+import Cookie from 'js-cookie'
+
 const dataNow = new Date()
 </script>
 
@@ -125,5 +140,14 @@ b {
 
 span {
   color: white;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.auth_2 {
+  color: white;
+  text-decoration: none;
 }
 </style>

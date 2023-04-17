@@ -71,6 +71,14 @@ if (AdminInfo.token) {
   })
 }
 
+if (AdminInfo.token) {
+  getUserInfo(AdminInfo.token).then((resp) => {
+    if (resp.role.type === 'authenticated') {
+      AdminInfo.isConfirmed = true
+    }
+  })
+}
+
 const onSubmit = () => {
   loginUser(Admin)
     .then((resp) => {

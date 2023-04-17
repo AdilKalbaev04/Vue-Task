@@ -3,6 +3,9 @@
     <a class="link" href="/Admin"
       >Back <img class="back" src="../../public/back.svg" alt=""
     /></a>
+
+  
+
     <h1>Admin Panel</h1>
     <form class="form" @submit.prevent="onSubmitData">
       <div class="table">
@@ -225,6 +228,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { changeData, getDataImg } from '../api/request'
+
 const dataPage = reactive({
   data: {}
 })
