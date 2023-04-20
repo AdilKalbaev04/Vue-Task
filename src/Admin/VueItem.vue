@@ -27,6 +27,7 @@ import { RouterLink } from 'vue-router'
 }
 a {
   text-decoration: none;
+  color: rgb(165, 165, 186);
 }
 .text_cont,
 .img_cont {
@@ -34,7 +35,7 @@ a {
   height: 200px;
   display: flex;
   align-items: center;
-  background: rgb(123, 121, 255);
+  background: rgb(33, 33, 52);
   color: white;
   justify-content: center;
 }

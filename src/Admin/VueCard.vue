@@ -4,7 +4,7 @@
       >Back <img class="back" src="../../public/back.svg" alt=""
     /></RouterLink>
 
-    <h1>Admin Panel</h1>
+    <h1>ALL TEXT</h1>
     <form class="form" @submit.prevent="onSubmitData">
       <VButton class="btn">save</VButton>
 
@@ -334,7 +334,7 @@ h1 {
 
 .btn {
   width: 200px;
-  background-color: rgb(73, 69, 255);
+  background: rgb(65, 65, 172);
   position: absolute;
   top: 50px;
   right: 130px;

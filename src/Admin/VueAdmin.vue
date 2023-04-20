@@ -50,6 +50,7 @@ import { reactive } from 'vue'
 import { loginUser, getUserInfo } from '@/api/request'
 import Cookie from 'js-cookie'
 import AdminPanel from './AdminPanel.vue'
+import router from '../router'
 const Admin = reactive({
   identifier: '',
   password: ''
@@ -83,7 +84,7 @@ const onSubmit = () => {
   loginUser(Admin)
     .then((resp) => {
       Cookie.set('key', resp.jwt)
-      location.reload()
+      router.push('/')
     })
     .catch((error) => {
       console.error(error)

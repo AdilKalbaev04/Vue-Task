@@ -3,8 +3,11 @@
     <RouterLink class="link" to="/Admin"
       >Back <img class="back" src="../../public/back.svg" alt=""
     /></RouterLink>
-    <h1>Admin Panel</h1>
+    <h1>ALL IMAGES</h1>
+
     <form class="form" @submit.prevent="onSubmitData">
+      <VButton class="btn">save</VButton>
+
       <div class="table">
         <h4>Key Features</h4>
 
@@ -15,13 +18,11 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>What We Do</h4>
         <img class="img" :src="dataPage.data.what_we_do?.images.url" alt="" />
         <input name="what_we_do" @change="changeImg" class="file" type="file" />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Design Perfection</h4>
@@ -36,7 +37,6 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
 
       <div class="table">
@@ -44,21 +44,18 @@
         <span>Image 1</span>
         <img class="img" :src="dataPage.data.about_us?.images.url" alt="" />
         <input name="about_us" @change="changeImg" class="file" type="file" />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>About Us</h4>
         <span>Image 2</span>
         <img class="img" :src="dataPage.data.about_us?.images2.url" alt="" />
         <input name="about_us2" @change="changeImg" class="file" type="file" />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>About Us</h4>
         <span>Image 3</span>
         <img class="img" :src="dataPage.data.about_us?.images3.url" alt="" />
         <input name="about_us3" @change="changeImg" class="file" type="file" />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Digital Marketing</h4>
@@ -73,7 +70,6 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
 
       <div class="table">
@@ -85,7 +81,6 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
 
       <div class="table">
@@ -97,7 +92,6 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Achievement 3</h4>
@@ -108,7 +102,6 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Achievement 4</h4>
@@ -119,7 +112,6 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
       <div class="table">
         <h4>Achievement 5</h4>
@@ -130,7 +122,6 @@
           class="file"
           type="file"
         />
-        <VButton class="btn">save</VButton>
       </div>
     </form>
   </div>
@@ -229,14 +220,14 @@ textarea {
   padding: 20px;
   border: 1px solid rgb(74, 74, 106);
   background: none;
-  color: #f2f2f2;
+  color: rgb(165, 165, 186);
 }
 .file {
   width: 100%;
   padding: 0;
   border: none;
   background: none;
-  color: #f2f2f2;
+  color: rgb(165, 165, 186);
 }
 a {
   color: white;
@@ -267,14 +258,19 @@ h1 {
   flex-direction: column;
   gap: 20px;
   max-width: 300px;
-  align-items: center;
   background: rgb(33, 33, 52);
   padding: 20px;
 }
 
 .btn {
   width: 200px;
-  background-color: rgb(73, 69, 255);
+  background: rgb(65, 65, 172);
+  position: absolute;
+  top: 50px;
+  right: 130px;
+}
+.btn:active {
+  transform: scale(0.9);
 }
 .form {
   display: flex;
