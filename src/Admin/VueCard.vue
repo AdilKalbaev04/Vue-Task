@@ -222,7 +222,7 @@ getDataImg().then((res) => {
 })
 const onSubmitData = () => {
   changeData(dataPage.data)
-  alert('Success: Saved')
+  alert('Success: Save')
 }
 </script>
 

@@ -29,11 +29,24 @@
       <div class="text-field text-field_floating">
         <input
           class="text-field__input"
-          type="password"
+          :type="showPassword ? 'text' : 'password'"
           v-model="Admin.password"
         />
+
         <label class="text-field__label" for="name">Password</label>
       </div>
+      <div class="showPass">
+        <img v-if="showPassword" class="show" src="./show.svg" alt="" />
+        <img v-else class="hide" src="./hide.svg" alt="" />
+        <input
+          type="checkbox"
+          v-model="showPassword"
+          name=""
+          id=""
+          placeholder="Показать пороль"
+        />
+      </div>
+
       <!-- <div v-if="failReqest.errorMessege === 'Invalid identifier or password'">
         <h2>Неверный пороль или email</h2>
       </div> -->
@@ -46,11 +59,13 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { loginUser, getUserInfo } from '@/api/request'
 import Cookie from 'js-cookie'
 import AdminPanel from './AdminPanel.vue'
 import router from '../router'
+const showPassword = ref(false)
+
 const Admin = reactive({
   identifier: '',
   password: ''
@@ -101,9 +116,23 @@ h1 {
   font-weight: 500;
   text-align: center;
 }
+.showPass {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
 
 p {
   font-weight: 500;
+}
+.show {
+  width: 20px;
+  height: 20px;
+}
+.hide {
+  width: 20px;
+  height: 20px;
 }
 
 .text-field {
