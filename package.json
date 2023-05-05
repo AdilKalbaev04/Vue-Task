@@ -2,8 +2,11 @@
   "name": "vue",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://github.com/AdilKalbaev04/Vue-Task",
   "scripts": {
     "dev": "vite",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
