@@ -45,6 +45,30 @@
   </div>
 </template>
 
+<!-- <template>
+  <div class="Cont_block_4">
+    <div class="wrapper">
+      <div class="block_4_text_1">
+        <img :src="dataPage.data.achievement?.images.url" alt="" />
+        <span class="title">{{ dataPage?.data?.achievement?.title }}</span>
+        <p class="text">
+          {{ dataPage?.data?.achievement?.desc }}
+        </p>
+        <a class="link" href="#">MORE</a>
+      </div>
+
+      <div>
+        <VueAchievementBlock
+          v-for="item in dataPage.data"
+          :key="item"
+          :message="item?.achievement?.title"
+          count="2"
+        />
+      </div>
+    </div>
+  </div>
+</template> -->
+
 <script setup>
 import { reactive } from 'vue'
 import { getDataImg } from '../../api/request'

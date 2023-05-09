@@ -35,10 +35,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { getDataImg } from '../../api/request'
-// let dataImg = reactive({
-//   img: {},
-//   title: ''
-// })
+
 const dataPage = reactive({
   data: {}
 })

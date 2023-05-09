@@ -1,42 +1,50 @@
 <template>
-  <div class="Cont_block_3">
-    <div class="img_wrap">
-      <img class="img" :src="dataPage.data.design_perfection?.images.url" alt="" />
+  <div class="Cont_block_3_design">
+    <div class="img_wrap_design">
+      <img
+        class="img_design"
+        :src="dataPage.data.design_perfection?.images.url"
+        alt=""
+      />
     </div>
-    <div class="block_3_text">
-      <span class="title">{{ dataPage?.data?.design_perfection?.title }}</span>
-      <p class="text">
+    <div class="block_3_text_design">
+      <span class="title_design">{{
+        dataPage?.data?.design_perfection?.title
+      }}</span>
+      <p class="text_design">
         {{ dataPage?.data?.design_perfection?.desc }}
       </p>
-      <div class="link_cont">
+      <div class="link_cont_design">
         <span>Image from </span>
-        <a class="link" href="https://www.freepik.com/" target="_blank"
+        <a class="link_design" href="https://www.freepik.com/" target="_blank"
           >Freepik</a
         >
       </div>
 
       <div>
-        <VButton class="btn" @click="showModal = true">Learn more</VButton>
+        <VButton class="btn_design" @click="showModal = true"
+          >Learn more</VButton
+        >
 
         <BackDrop @click="showModal = false" v-if="showModal" />
         <div v-if="showModal">
-          <div class="modal">
-            <div class="info_cont">
-              <span class="text_2"
+          <div class="modal_design">
+            <div class="info_cont_design">
+              <span class="text_2_design"
                 >{{ dataPage?.data?.design_perfection?.title }}
               </span>
-              <p class="short_text">
+              <p class="short_text_design">
                 {{ dataPage?.data?.design_perfection?.desc }}
               </p>
             </div>
-            <button class="btn_modal" @click="showModal = false">
-              <img class="exit" src="/exit.png" alt="" />
+            <button class="btn_modal_design" @click="showModal = false">
+              <img class="exit_design" src="/exit.png" alt="" />
             </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="circle"></div>
+    <div class="circle_design"></div>
   </div>
 </template>
 
@@ -55,38 +63,38 @@ const showModal = ref(false)
 </script>
 
 <style scoped>
-.info_cont {
+.info_cont_design {
   display: flex;
   flex-direction: column;
   padding: 30px;
   text-align: center;
 }
-.text_2 {
+.text_2_design {
   font-size: 2.25rem;
   line-height: 1.2;
   font-family: 'Bai Jamjuree';
   font-weight: 400;
   color: white;
 }
-.short_text {
+.short_text_design {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.6;
   font-family: 'Open Sans', sans-serif;
   color: white;
 }
-.btn_modal {
+.btn_modal_design {
   position: absolute;
   top: 10px;
   right: 10px;
   border: none;
   background-color: #545af8 !important;
 }
-.exit {
+.exit_design {
   width: 20px;
   height: 20px;
 }
-.modal {
+.modal_design {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -98,40 +106,40 @@ const showModal = ref(false)
   min-height: 400px;
   border-radius: 20px;
 }
-.Cont_block_3 {
+.Cont_block_3_design {
   position: relative;
   display: flex;
   justify-content: center;
   gap: 70px;
   padding: 80px;
 }
-.img_wrap {
+.img_wrap_design {
   max-width: 695px;
 }
-.img {
+.img_design {
   width: 100%;
 }
-.title {
+.title_design {
   font-size: 2.25rem;
   line-height: 1.2;
   font-family: 'Bai Jamjuree';
   font-weight: 400;
 }
-.text {
+.text_design {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.6;
   font-family: 'Open Sans', sans-serif;
   color: #111111;
 }
-.link_cont {
+.link_cont_design {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.6;
   font-family: 'Open Sans', sans-serif;
   color: #111111;
 }
-.btn {
+.btn_design {
   text-transform: uppercase;
   font-size: 1.125rem;
   letter-spacing: 2px;
@@ -139,7 +147,7 @@ const showModal = ref(false)
   padding: 14px 32px 15px;
   background-color: #545af8 !important;
 }
-.block_3_text {
+.block_3_text_design {
   gap: 10px;
   max-width: 385px;
   background-color: #f2f2f2;
@@ -150,10 +158,10 @@ const showModal = ref(false)
   z-index: 3;
   margin-top: 60px;
 }
-.btn:hover {
+.btn:hover_design {
   background-color: #3e44f8 !important;
 }
-.circle {
+.circle_design {
   position: absolute;
   top: 0;
   right: 459px;
@@ -164,12 +172,12 @@ const showModal = ref(false)
   z-index: 2;
 }
 @media screen and (max-width: 1190px) {
-  .Cont_block_3 {
+  .Cont_block_3_design {
     flex-direction: column;
     align-items: center;
     padding: 10px;
   }
-  .circle {
+  .circle_design {
     display: none;
   }
 }
