@@ -21,6 +21,10 @@ export const getUserInfo = (token) => {
 export const getDataImg = () => {
   return StrapiApi.get('vue-task?populate=deep').json()
 }
+
+export const getDataImgAchivement = () => {
+  return StrapiApi.get('vue-task?populate=achievement').json()
+}
 export const changeData = (data) => {
   return StrapiApi.put('vue-task?populate=*', { json: data }).json()
 }

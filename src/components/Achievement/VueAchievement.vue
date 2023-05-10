@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="Cont_block_4">
     <div class="wrapper">
       <div class="block_4_text_1">
@@ -43,40 +43,31 @@
       </div>
     </div>
   </div>
-</template>
+</template> -->
 
-<!-- <template>
+<template>
   <div class="Cont_block_4">
     <div class="wrapper">
-      <div class="block_4_text_1">
-        <img :src="dataPage.data.achievement?.images.url" alt="" />
-        <span class="title">{{ dataPage?.data?.achievement?.title }}</span>
-        <p class="text">
-          {{ dataPage?.data?.achievement?.desc }}
-        </p>
-        <a class="link" href="#">MORE</a>
-      </div>
-
-      <div>
-        <VueAchievementBlock
-          v-for="item in dataPage.data"
-          :key="item"
-          :message="item?.achievement?.title"
-          count="2"
-        />
-      </div>
+      <VueAchievementBlock
+        v-for="item in dataPage.data.achievement"
+        :key="item"
+        :message="item?.title"
+        :text="item?.desc"
+        :img="item.img"
+      />
     </div>
   </div>
-</template> -->
+</template>
 
 <script setup>
 import { reactive } from 'vue'
-import { getDataImg } from '../../api/request'
+import { getDataImgAchivement } from '../../api/request'
+import VueAchievementBlock from './VueAchievementBlock.vue'
 const dataPage = reactive({
   data: {}
 })
 
-getDataImg().then((res) => {
+getDataImgAchivement().then((res) => {
   dataPage.data = res.data
 })
 </script>
@@ -84,14 +75,12 @@ getDataImg().then((res) => {
 <style scoped>
 .Cont_block_4 {
   background-image: linear-gradient(#545af8, #e84a90);
-  min-height: 761px;
   max-width: 100%;
 }
 .wrapper {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 80px;
+  justify-content: space-around;
+  padding: 30px;
 }
 .block_4_text_1 {
   max-width: 215px;
@@ -99,73 +88,13 @@ getDataImg().then((res) => {
   box-shadow: 5px 5px 0px 0 rgba(0, 0, 0, 0.2);
   border-radius: 3px !important;
   background: white;
+  display: flex;
   padding: 30px 20px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 4px;
-  margin-top: 130px;
-}
-.block_4_text_2 {
-  max-width: 215px;
-  height: 440px;
-  box-shadow: 5px 5px 0px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 3px !important;
-  background: white;
-  padding: 30px 20px;
-  text-align: center;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
 }
-.block_4_text_3 {
-  max-width: 215px;
-  height: 440px;
-  box-shadow: 5px 5px 0px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 3px !important;
-  background: white;
-  padding: 30px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 130px;
-}
-.block_4_text_4 {
-  max-width: 215px;
-  height: 440px;
-  box-shadow: 5px 5px 0px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 3px !important;
-  background: white;
-  padding: 30px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-.block_4_text_5 {
-  max-width: 215px;
-  height: 440px;
-  box-shadow: 5px 5px 0px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 3px !important;
-  background: white;
-  padding: 30px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 130px;
-}
+
 .title {
   text-transform: uppercase;
   color: #e84a90 !important;

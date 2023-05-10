@@ -1,9 +1,9 @@
 <template>
   <div class="block_4_text_1">
-    <!-- <img :src="img" alt="" /> -->
+    <img :src="img" alt="" />
     <span class="title">{{ message }}</span>
     <p class="text">
-      {{ count }}
+      {{ text }}
     </p>
     <a class="link" href="#">MORE</a>
   </div>
@@ -12,12 +12,11 @@
 <script setup>
 import { defineProps } from 'vue'
 
+// eslint-disable-next-line no-unused-vars
 const props = defineProps({
   message: String,
-  count: {
-    type: Number,
-    default: 0
-  }
+  text: String,
+  img: String
 })
 </script>
 
@@ -31,11 +30,9 @@ const props = defineProps({
   padding: 30px 20px;
   text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  margin-top: 130px;
+  gap: 33px;
 }
 
 .title {
