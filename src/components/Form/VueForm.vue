@@ -224,5 +224,8 @@ const submitForm = (event) => {
     max-width: 475px;
     width: auto;
   }
+  .Cont_Form {
+    padding: 0;
+  }
 }
 </style>
